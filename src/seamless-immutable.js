@@ -4,8 +4,8 @@
 function immutableInit(config) {
 
   // https://github.com/facebook/react/blob/v15.0.1/src/isomorphic/classic/element/ReactElement.js#L21
-  var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol.for && Symbol.for('react.element');
-  var REACT_ELEMENT_TYPE_FALLBACK = 0xeac7;
+  var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol.for && Symbol.for('react.transitional.element');
+  // var REACT_ELEMENT_TYPE_FALLBACK = 0xeac7;
 
   var globalConfig = {
     use_static: false
@@ -599,12 +599,18 @@ function immutableInit(config) {
     return makeImmutable(obj, mutatingObjectMethods);
   }
 
+  // Adapt for RN 0.82.1 with react 19.1.1
   // Returns true if object is a valid react element
-  // https://github.com/facebook/react/blob/v15.0.1/src/isomorphic/classic/element/ReactElement.js#L326
+  // https://github.com/facebook/react/blob/02ef49580922f87180f32618b9d1c70b75b968b7/packages/react/src/jsx/ReactJSXElement.js#L920
   function isReactElement(obj) {
-    return typeof obj === 'object' &&
-           obj !== null &&
-           (obj.$$typeof === REACT_ELEMENT_TYPE_FALLBACK || obj.$$typeof === REACT_ELEMENT_TYPE);
+    // return typeof obj === 'object' &&
+    //        obj !== null &&
+    //        (obj.$$typeof === REACT_ELEMENT_TYPE_FALLBACK || obj.$$typeof === REACT_ELEMENT_TYPE);
+    return (
+      typeof object === 'object' &&
+      object !== null &&
+      object.$$typeof === REACT_ELEMENT_TYPE
+    );
   }
 
   function isFileObject(obj) {
