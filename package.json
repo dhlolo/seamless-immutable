@@ -1,6 +1,9 @@
 {
   "name": "@mrn/seamless-immutable",
   "version": "7.1.4",
+  "resolutions": {
+    "stacktrace-js": "0.6.0"
+  },
   "description": "Immutable data structures for JavaScript which are backwards-compatible with normal JS Arrays and Objects.",
   "main": "src/seamless-immutable.js",
   "browser": "seamless-immutable.development.js",
