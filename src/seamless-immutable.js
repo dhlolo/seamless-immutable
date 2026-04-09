@@ -607,9 +607,9 @@ function immutableInit(config) {
     //        obj !== null &&
     //        (obj.$$typeof === REACT_ELEMENT_TYPE_FALLBACK || obj.$$typeof === REACT_ELEMENT_TYPE);
     return (
-      typeof object === 'object' &&
-      object !== null &&
-      object.$$typeof === REACT_ELEMENT_TYPE
+      typeof obj === 'object' &&
+      obj !== null &&
+      obj.$$typeof === REACT_ELEMENT_TYPE
     );
   }
 
