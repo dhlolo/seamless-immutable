@@ -1,6 +1,6 @@
 {
   "name": "@mrn/seamless-immutable",
-  "version": "7.1.4",
+  "version": "7.1.5",
   "resolutions": {
     "stacktrace-js": "0.6.0"
   },
